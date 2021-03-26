@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BercAlexei/"
+    "url": "git+https://github.com/BercAlexei/gulp-starter"
   },
   "author": "Alexei",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/BercAlexei/pulse/issues"
   },
-  "homepage": "https://github.com/BercAlexei/pulse#readme",
+  "homepage": "https://github.com/BercAlexei/gulp#readme",
   "devDependencies": {
     "bootstrap": "^5.0.0-beta1",
     "browser-sync": "^2.26.14",
