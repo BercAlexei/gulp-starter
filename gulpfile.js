@@ -8,7 +8,8 @@ const gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
-    htmlmin = require('gulp-htmlmin');
+    htmlmin = require('gulp-htmlmin'),
+    babel = require("gulp-babel");
 
 
 gulp.task('server', function () {
@@ -46,7 +47,10 @@ gulp.task('scripts', function(){
                     //  "WOW-master/dist/wow.min.js",
                      "src/js/_script.js"
                     ])
-        .pipe(concat('script.min.js'))
+        .pipe(concat('script.min.js')) 
+        .pipe(babel({
+            "plugins": ["@babel/plugin-transform-arrow-functions"]
+          }))
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'))
         .pipe(browserSync.stream());
