@@ -49,7 +49,7 @@ gulp.task('scripts', function(){
                     ])
         .pipe(concat('script.min.js')) 
         .pipe(babel({
-            "plugins": ["@babel/plugin-transform-arrow-functions"]
+            "presets": ["@babel/preset-env"]
           }))
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'))
