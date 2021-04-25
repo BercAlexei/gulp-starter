@@ -2,8 +2,8 @@
 
 Это обычный GULP - стартер!
 Здесь используется HTML 5, CSS 3, нативный JS, методология БЭМ, SASS и т.д.!
-##
-### NPM пакеты:
+
+## NPM пакеты:
    babel/preset-env,<br>
    bootstrap,<br>
    browser-sync,<br>
