@@ -41,12 +41,7 @@ gulp.task('scripts', function(){
 
                     //подключение библиотек :
 
-                    //  "node_modules/jquery/dist/jquery.min.js",
-                    //  "node_modules/slick-carousel/slick/slick.min.js",
-                    //  "node_modules/jquery-validation/dist/jquery.validate.min.js",
-                    //  "jquery.maskedinput-master/dist/jquery.maskedinput.min.js",
-                    //  "WOW-master/dist/wow.min.js",
-                    // "src/js/libs/_jquery-3.6.0.js",
+                    "src/js/**/*",
                      "src/js/_script.js"
                     ])
         .pipe(concat('script.min.js')) 
