@@ -5,7 +5,9 @@
 Также есть возможность подключения jQuery и других плагинов и библиотек)
 
 ## NPM пакеты:
-   babel/preset-env,<br>
+   @babel/cli,<br>
+   @babel/core,<br>
+   @babel/preset-env,<br>
    bootstrap,<br>
    browser-sync,<br>
    gulp,<br>
