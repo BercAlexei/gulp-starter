@@ -9,7 +9,8 @@ const gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
     htmlmin = require('gulp-htmlmin'),
-    babel = require("gulp-babel");
+    babel = require('gulp-babel'),
+    del = require('del');
 
 
 gulp.task('server', function () {
@@ -45,6 +46,7 @@ gulp.task('scripts', function(){
                     //  "node_modules/jquery-validation/dist/jquery.validate.min.js",
                     //  "jquery.maskedinput-master/dist/jquery.maskedinput.min.js",
                     //  "WOW-master/dist/wow.min.js",
+                    // "src/js/libs/_jquery-3.6.0.js",
                      "src/js/_script.js"
                     ])
         .pipe(concat('script.min.js')) 
@@ -58,8 +60,11 @@ gulp.task('scripts', function(){
 
 gulp.task('watch', function(){
     gulp.watch("src/scss/**/*.+(scss|sass|css)", gulp.parallel("styles"))
-    gulp.watch(['src/js/_script.js'], gulp.parallel('scripts'));
-    gulp.watch("src/*.html").on("change", gulp.parallel('html'));
+    gulp.watch(['src/js/**/*.js'], gulp.parallel('scripts'))
+    gulp.watch("src/*.html").on("change", gulp.parallel('html'))
+    gulp.watch("src/img/**/*").on("add", gulp.parallel('images'))
+    gulp.watch("src/icons/**/*").on("add", gulp.parallel('icons'))
+    gulp.watch("src/fonts/**/*").on("add", gulp.parallel('fonts'))
 });
 
 gulp.task('html', function(){
@@ -70,12 +75,14 @@ gulp.task('html', function(){
 
 gulp.task('fonts', function(){
     return gulp.src("src/fonts/*")
-        .pipe(gulp.dest("dist/fonts"));
+        .pipe(gulp.dest("dist/fonts"))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('icons', function(){
     return gulp.src("src/icons/**/*")
-        .pipe(gulp.dest("dist/icons"));
+        .pipe(gulp.dest("dist/icons"))
+        .pipe(browserSync.stream());
 });
 
 
@@ -87,7 +94,8 @@ gulp.task('mailer', function(){
 gulp.task('images', function(){
     return gulp.src("src/img/**/*")
         .pipe(imagemin())
-        .pipe(gulp.dest("dist/img"));
+        .pipe(gulp.dest("dist/img"))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'scripts', 'fonts', 'icons', 'mailer', 'html', 'images'))
