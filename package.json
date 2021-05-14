@@ -18,9 +18,8 @@
   "homepage": "https://github.com/BercAlexei/gulp#readme",
   "devDependencies": {
     "@babel/cli": "^7.13.16",
-    "@babel/core": "^7.13.16",
-    "@babel/preset-env": "^7.13.15",
-    "bootstrap": "^5.0.0-beta1",
+    "@babel/core": "^7.14.2",
+    "@babel/preset-env": "^7.14.2",
     "browser-sync": "^2.26.14",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
@@ -42,6 +41,7 @@
     "not dead"
   ],
   "dependencies": {
-    "uglify-es": "github:mishoo/UglifyJS2#harmony"
+    "uglify-es": "github:mishoo/UglifyJS2#harmony",
+    "bootstrap": "^5.0.1"
   }
 }

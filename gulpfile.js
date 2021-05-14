@@ -9,8 +9,7 @@ const gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	imagemin = require('gulp-imagemin'),
 	htmlmin = require('gulp-htmlmin'),
-	babel = require('gulp-babel'),
-	del = require('del')
+	babel = require('gulp-babel');
 
 gulp.task('server', function () {
 	browserSync.init({
