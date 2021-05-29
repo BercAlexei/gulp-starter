@@ -9,7 +9,8 @@ const gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	imagemin = require('gulp-imagemin'),
 	htmlmin = require('gulp-htmlmin'),
-	babel = require('gulp-babel');
+	babel = require('gulp-babel'),
+	del = require('del');
 
 gulp.task('server', function () {
 	browserSync.init({
@@ -97,6 +98,8 @@ gulp.task('images', function () {
 		.pipe(gulp.dest('dist/img'))
 		.pipe(browserSync.stream())
 })
+
+del.sync(['dist']);
 
 gulp.task(
 	'default',
