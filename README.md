@@ -20,5 +20,5 @@
    gulp-imagemin,<br>
    gulp-rename,<br>
    gulp-sass,<br>
-   gulp-uglify,<br>
-   uglify-js
+   gulp-terser,<br>
+   del

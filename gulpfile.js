@@ -6,7 +6,7 @@ const gulp = require('gulp'),
 	autoprefixer = require('gulp-autoprefixer'),
 	sass = require('gulp-sass'),
 	concat = require('gulp-concat'),
-	uglify = require('gulp-uglify'),
+	terser = require('gulp-terser');
 	imagemin = require('gulp-imagemin'),
 	htmlmin = require('gulp-htmlmin'),
 	babel = require('gulp-babel'),
@@ -52,7 +52,7 @@ gulp.task('scripts', function () {
 				presets: ['@babel/preset-env'],
 			})
 		)
-		.pipe(uglify())
+		.pipe(terser())
 		.pipe(gulp.dest('dist/js'))
 		.pipe(browserSync.stream())
 })
@@ -99,19 +99,27 @@ gulp.task('images', function () {
 		.pipe(browserSync.stream())
 })
 
-del.sync(['dist']);
+gulp.task('del', function(done) {
+	del.sync(['dist']);
+	done();
+});
+
+
 
 gulp.task(
 	'default',
-	gulp.parallel(
-		'watch',
-		'server',
-		'styles',
-		'scripts',
-		'fonts',
-		'icons',
-		'mailer',
-		'html',
-		'images'
+	gulp.series(
+		'del',
+		gulp.parallel(
+			'watch',
+			'server',
+			'styles',
+			'scripts',
+			'fonts',
+			'icons',
+			'mailer',
+			'html',
+			'images'
+		)
 	)
 )
