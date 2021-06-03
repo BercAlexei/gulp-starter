@@ -21,4 +21,6 @@
    gulp-rename,<br>
    gulp-sass,<br>
    gulp-terser,<br>
-   del
+   del,<br>
+   gulp-ttf2woff,<br>
+   gulp-ttf2woff2
