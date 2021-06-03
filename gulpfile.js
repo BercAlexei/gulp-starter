@@ -11,7 +11,6 @@ const gulp = require('gulp'),
 	htmlmin = require('gulp-htmlmin'),
 	babel = require('gulp-babel'),
 	del = require('del'),
-	ttfToWoff = require('gulp-ttf2woff'),
 	ttfToWoff2 = require('gulp-ttf2woff2');
 
 gulp.task('server', function () {
@@ -76,10 +75,6 @@ gulp.task('html', function () {
 })
 
 gulp.task('fonts', function () {
-	gulp.src('src/fonts/*.ttf')
-		.pipe(ttfToWoff())
-		.pipe(gulp.dest('dist/fonts'))
-		.pipe(browserSync.stream());
 	gulp.src('src/fonts/*.ttf')
 		.pipe(ttfToWoff2())
 		.pipe(gulp.dest('dist/fonts'))
