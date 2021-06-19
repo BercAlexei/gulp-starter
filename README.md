@@ -22,5 +22,4 @@
    gulp-sass,<br>
    gulp-terser,<br>
    del,<br>
-   gulp-ttf2woff,<br>
    gulp-ttf2woff2
