@@ -19,6 +19,7 @@
    gulp-htmlmin,<br>
    gulp-imagemin,<br>
    gulp-rename,<br>
+   sass,<br>
    gulp-sass,<br>
    gulp-terser,<br>
    del,<br>
